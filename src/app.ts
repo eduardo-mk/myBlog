@@ -40,14 +40,9 @@ app.use('/subscribe', subscribe);
 app.use('/blog', blog)
 app.use('/auth', auth)
 
-
-
-
-
-
-// //catch 404 and forward to error handler
+// //catch 404 
 // app.use(function(req, res, next) {
-//   var err: CustomError = new Error('Not Found');
+//   var err: CustomError = new Error('Not Found');git 
 //   err.status = 404;
 //   next(err);
 // });
