@@ -1,0 +1,24 @@
+extends layout
+
+block headBlog
+    div(class='listOfComments')
+        each val, index in comments
+            div(class='list-group mt-2 comment')
+                a(href="", class = 'list-group-item list-group-item-action flex-column align-items-start')
+                    div(class='d-flex w-100 justify-content-between')
+                        h5(class = 'mb-1')= val.title
+                        small Added: #{timeIndicator[index]} ago. 
+                    p(class='mb-1 comment-body')=val.comment
+                    div(class='d-flex justify-content-end mt-2')
+                        div(class='btn-group mt-1 align-items-center')
+                            button(class='btn btn-secondary') Like It!
+                            button(class='btn btn-secondary') Hate It!
+                            button(class='btn btn-secondary') Read!
+block footerBlog
+    ul(class='pagination')
+        li(class='page-item')
+            -let prevPage = (page - 1)>=0 ? page-1: 0;
+            a(class='page-link' href='/blog/readPost/' + prevPage) Previous
+        li(class='page-item')
+            -let nextPage = page + 1
+            a(class='page-link' href='/blog/readPost/' + nextPage ) Next
