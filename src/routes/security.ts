@@ -25,7 +25,7 @@ passport.use(new passport_jwt.Strategy(opts, function(jwt_payload, done){
         else if ( user && user.admin ){ console.log('Valid user'); done(null, user) }  // Checking against db, if user is admin and if the user exists. 
         else { console.log('Invalid User'); done(null, false)}
     })
-})):
+}));
 // third: declare a function to look for the user 
 function matchItWithDB(req: express.Request, res: express.Response, next: express.NextFunction) {
     userInfo.findOne({password: req.body.password, email: req.body.email}, function(err, user: infoUserModel) {

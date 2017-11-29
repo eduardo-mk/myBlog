@@ -1,0 +1,21 @@
+extends layout
+
+block headBlog
+    div(class = "d-flex justify-content-center mt-5")
+    
+        form(name='info',action = '/subscribe/subscribeUser', method = 'post', class= 'col-4 bg-dark text-white rounded' )
+            span.mt-2 #{userName} #{msg}
+            div.form-group
+                h3.mt-2 Thanks for subscribing
+                label(for = 'userNickname') Name
+                input(name='name',id = 'userNickname', type="text", class = 'form-control', placeholder="Enter your name or nickname")
+            div.form-group
+                label(for = 'userEmail') E-mail address
+                input(name='email', id = 'userEmail', type="email", class = 'form-control', aria-describedby="emailHelp" placeholder="Enter email")
+                small(id = 'emailHelp', class = 'form-text text-muted') We will not share your email and we will never send advertisement.
+            div.form-group 
+                label(for="userPassword") Password
+                input(name='password', type="password" class = "form-control" id="userPassword" placeholder = "Password")
+                small(id='passwordHelp', class = 'form-text text-muted') Password must contain at least 6 characters. 
+
+            button(type="submit", class = "btn btn-primary mt-2 mb-3") Submit

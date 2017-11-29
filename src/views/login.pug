@@ -1,0 +1,17 @@
+extends layout
+
+block headBlog
+    div(class = "d-flex justify-content-center mt-5")
+        form(name='info',action = '/auth/login', method = 'post', class= 'col-4 bg-dark text-white rounded' )
+            span(class= 'pt-3 d-inline-block') #{userName} #{msg}
+            div.form-group
+                h3.mt-2 Log In
+                label(for = 'userEmail') E-mail
+                input(name='email',id = 'userEmail', type="email", class = 'form-control', placeholder="Enter your email")
+            div.form-group 
+                label(for="userPassword") Password
+                input(name='password', type="password" class = "form-control" id="userPassword" placeholder = "Password")
+                small(id='passwordHelp', class = 'form-text text-muted') Password must contain at least 6 characters. 
+
+            button(type="submit", class = "btn btn-primary mt-2 mb-3") Log In
+
