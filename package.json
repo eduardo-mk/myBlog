@@ -5,7 +5,19 @@
   "scripts": {
     "start": "node ./dist/app.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "pug": "^2.0.0-beta11",
+    "serve-favicon": "^2.4.5",
+    "bluebird": "^3.5.1",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "^4.15.5",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.3"
+  },
   "main": "index.js",
   "author": "",
   "license": "ISC",
