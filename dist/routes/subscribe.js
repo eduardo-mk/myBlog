@@ -1,9 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express");
+exports.__esModule = true;
+var express = require("express");
 // Set database
-const config_1 = require("../db/config");
-let router = express.Router();
+var config_1 = require("../db/config");
+var router = express.Router();
 exports.router = router;
 /* GET users listing. */
 // Users can see login page.
@@ -11,11 +11,11 @@ router.get('/', function (req, res, next) {
     res.render('subscribe'); // Render page of log in. 
 });
 // Susbscribing users. 
-router.post('/subscribeUser', (req, res, next) => {
-    let user = new config_1.userInfo({
+router.post('/subscribeUser', function (req, res, next) {
+    var user = new config_1.userInfo({
         name: req.body.name,
         password: req.body.password,
-        email: req.body.email,
+        email: req.body.email
     });
     user.save()
         .then(function onFulfilled(msg) {
@@ -24,6 +24,5 @@ router.post('/subscribeUser', (req, res, next) => {
     }, function onReject(reason) {
         console.log('Fail on saving data: ' + reason);
         res.render('login', { msg: 'Sorry not saved', userName: req.body.name });
-    })
-        .catch((err) => console.log('This is the error', err));
+    })["catch"](function (err) { return console.log('This is the error', err); });
 });

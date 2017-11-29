@@ -1,20 +1,20 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express");
-const security_1 = require("./security");
-const config_1 = require("../db/config");
-let router = express.Router();
+exports.__esModule = true;
+var express = require("express");
+var security_1 = require("./security");
+var config_1 = require("../db/config");
+var router = express.Router();
 exports.router = router;
-let today = new Date();
+var today = new Date();
 // Variables declaration
 /* GET home page. */
 // blog/
-router.get('/', security_1.isAuth({ session: false, failureRedirect: '/blog/noAuth', }), function (req, res, next) {
+router.get('/', security_1.isAuth({ session: false, failureRedirect: '/blog/noAuth' }), function (req, res, next) {
     res.render('blog', { msg: "Let's start " + req.user.name });
 });
 // blog/comment/
-router.post('/comment', security_1.isAuth({ session: false, failureRedirect: '/blog/noAuth', }), function (req, res, next) {
-    let comment = new config_1.blogInfo({
+router.post('/comment', security_1.isAuth({ session: false, failureRedirect: '/blog/noAuth' }), function (req, res, next) {
+    var comment = new config_1.blogInfo({
         title: req.body.title,
         comment: req.body.comment,
         author: req.user.name,
@@ -30,14 +30,14 @@ router.post('/comment', security_1.isAuth({ session: false, failureRedirect: '/b
     });
 });
 // blog/readPost
-router.get('/readPost/:page', security_1.isAuth({ session: false, failureRedirect: '/blog/noAuth/', }), dbConsultBlogComments);
+router.get('/readPost/:page', security_1.isAuth({ session: false, failureRedirect: '/blog/noAuth/' }), dbConsultBlogComments);
 // blog/noAuth
 router.get('/noAuth', function (req, res, next) {
     res.render('login', { msg: 'Plese Log In first to access the blog.' });
 });
 // Functions needed. 
 function dbConsultBlogComments(req, res, next) {
-    let actualPage = req.params.page >= 0 ? Number(req.params.page) : 0;
+    var actualPage = req.params.page >= 0 ? Number(req.params.page) : 0;
     config_1.blogInfo.find({}).sort({ date: -1 }).skip(4 * actualPage).limit(4).exec(function (err, comments) {
         if (err) {
             console.log('An error has occured! ');
@@ -50,8 +50,8 @@ function dbConsultBlogComments(req, res, next) {
 }
 ;
 function daysOld(comments) {
-    let days = [];
-    let hours = 0;
+    var days = [];
+    var hours = 0;
     for (var index = 0; index < comments.length; index++) {
         var element = comments[index];
         hours = Math.abs(today.getTime() - element.date.getTime()) / (1000 * 3600);
@@ -62,7 +62,7 @@ function daysOld(comments) {
             days.push(Math.ceil(hours) + ' hours');
         }
         else {
-            let day = Math.ceil(hours % 24);
+            var day = Math.ceil(hours % 24);
             days.push(day + 'days');
         }
     }

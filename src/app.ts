@@ -40,12 +40,12 @@ app.use('/subscribe', subscribe);
 app.use('/blog', blog)
 app.use('/auth', auth)
 
-// //catch 404 
+// //catch 40000000vierasdfasdsf 
 // app.use(function(req, res, next) {
 //   var err: CustomError = new Error('Not Found');git 
 //   err.status = 404;
 //   next(err);
-// });
+// })
 
 // // error handler
 // app.use(function(err: CustomError, req: express.Request, res: express.Response, next: express.NextFunction) {
@@ -58,5 +58,5 @@ app.use('/auth', auth)
 //   res.render('error');
 // });
 
-app.listen(3001)
+app.listen( process.env.PORT || 3001)
 // module.exports = app;    

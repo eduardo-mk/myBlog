@@ -1,17 +1,17 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 // Import standard middlewares. 
-const express = require("express");
-const path = require("path");
-const favicon = require("serve-favicon");
-const cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
+var express = require("express");
+var path = require("path");
+var favicon = require("serve-favicon");
+var cookieParser = require("cookie-parser");
+var bodyParser = require("body-parser");
 // Routes for this app.
-const index_1 = require("./routes/index");
-const subscribe_1 = require("./routes/subscribe");
-const auth_1 = require("./routes/auth");
-const blog_1 = require("./routes/blog");
-let app = express();
+var index_1 = require("./routes/index");
+var subscribe_1 = require("./routes/subscribe");
+var auth_1 = require("./routes/auth");
+var blog_1 = require("./routes/blog");
+var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -27,12 +27,12 @@ app.use('/', index_1.router);
 app.use('/subscribe', subscribe_1.router);
 app.use('/blog', blog_1.router);
 app.use('/auth', auth_1.router);
-// //catch 404 and forward to error handler
+// //catch 40000000vierasdfasdsf 
 // app.use(function(req, res, next) {
-//   var err: CustomError = new Error('Not Found');
+//   var err: CustomError = new Error('Not Found');git 
 //   err.status = 404;
 //   next(err);
-// });
+// })
 // // error handler
 // app.use(function(err: CustomError, req: express.Request, res: express.Response, next: express.NextFunction) {
 //   // set locals, only providing error in development
@@ -43,4 +43,4 @@ app.use('/auth', auth_1.router);
 //   res.render('error');
 // });
 app.listen(3001);
-// module.exports = app;
+// module.exports = app;    

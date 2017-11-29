@@ -1,9 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express");
-const config_1 = require("../db/config");
-const security_1 = require("./security");
-let router = express.Router();
+exports.__esModule = true;
+var express = require("express");
+var config_1 = require("../db/config");
+var security_1 = require("./security");
+var router = express.Router();
 exports.router = router;
 /* auth/     ROUTING */
 // auth/

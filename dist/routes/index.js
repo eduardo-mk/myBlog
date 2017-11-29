@@ -1,7 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express");
-let router = express.Router();
+exports.__esModule = true;
+var express = require("express");
+var router = express.Router();
 exports.router = router;
 /* GET home page. */
 // myHost:/   Landing Page.
