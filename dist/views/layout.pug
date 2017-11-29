@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    //- link(rel='apple-touch-icon', sizes='57x57', href='/apple-icon-57x57.png')
+    
+  body
+  div(class = 'layout head') 
+    h1(class = 'container-fluid text-center') Welcome to my blog 
+    ul.nav.justify-content-center.nav-fill
+      li.nav-item
+        a.nav-link.active(href='/') Home
+      li.nav-item
+        a.nav-link.active(href='/auth') Log In
+      li.nav-item.dropdown
+        a(class = "nav-link dropdown-toggle", data-toggle = 'dropdown') Blog
+        .dropdown-menu 
+          a(href="/blog", class = 'dropdown-item') Post
+          a(href="/blog/readPost/0", class = 'dropdown-item') Recently Added
+          a(href="/blog/myPost", class = 'dropdown-item') My Posts
+      li.nav-item
+        a.nav-link(href='#') About Us
+      li.nav-item
+        a.nav-link.disabled(href='#') Help
+      li.nav-item
+        a.nav-link(href='/subscribe') Subscribe
+
+  block headBlog
+  block contentBlog
+  block footerBlog
+
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js', integrity='sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js', integrity='sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ', crossorigin='anonymous')
+
+
