@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node ./dist/app.js"
   },
+  "engines": {
+    "node": "6.11.1"
+  },
   "dependencies": {
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1",
@@ -18,10 +21,10 @@
     "jsonwebtoken": "^8.1.0",
     "mongoose": "^4.13.3"
   },
-  "main": "index.js",
-  "author": "",
+  "main": "./dist/app.js",
+  "author": "eduardo-mk",
   "license": "ISC",
-  "description": "",
+  "description": "My blog application.",
   "devDependencies": {
     "@types/bluebird": "^3.5.18",
     "@types/body-parser": "^1.16.8",
