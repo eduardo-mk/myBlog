@@ -58,5 +58,5 @@ app.use('/auth', auth)
 //   res.render('error');
 // });
 
-app.listen(3001)
+app.listen( process.env.PORT || 3001 )
 // module.exports = app;    
