@@ -1,0 +1,13 @@
+extends layout
+
+block headBlog
+    div(class = 'column wrapperBlog')  
+        h3(class='col-6 mt-3 mb-3 blogWelcomeMsg mx-auto text-center') #{msg}
+        form(name='info',action = '/blog/comment', method = 'post', class= 'col-6 bg-dark text-white rounded mx-auto' )
+            .form-group
+                label(for='title', class='mt-3') Tittle of the post.
+                input#exampleFormControlInput1.form-control(name='title', type='text', placeholder='Tittle')
+            .form-group
+                label(for='exampleFormControlTextarea1') Comment
+                textarea#exampleFormControlTextarea1.form-control(name='comment', rows='3')
+            button(type="submit", class = "btn btn-primary mt-2 mb-3 ") Post
